@@ -12,20 +12,21 @@ const refs = {
 };
 
 function createCountryCard({ name, capital, population, flags, languages }) {
-  return `
+  return `    
     <img src="${flags.svg}" alt="${name.official}" width="200"/>
-    <h2>${name.official}</h2>
-    <p>Capital: ${capital}</p>
-    <p>Population: ${population}</p>
-    <p>Languages: ${Object.values(languages)}</p>
+    <h2 class="country-title" >${name.official}</h2> 
+    <p class="country-text">Capital: ${capital}</p>
+    <p class="country-text">Population: ${population}</p>
+    <p class="country-text">Languages: ${Object.values(languages)}</p>
+    
   `;
 }
 
 function createCountryList({ name, flags }) {
   return `
-    <li>
-    <img src="${flags.svg}" alt="${name.official}" width="50"/>
-    <h2>${name.official}</h2> 
+    <li class="country-item">
+    <img src="${flags.svg}" alt="${name.official}" width="100"/>
+    <h2 class="country-title" >${name.official}</h2> 
     </li>
     `;
 }
