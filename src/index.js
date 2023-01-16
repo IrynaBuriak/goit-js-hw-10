@@ -51,22 +51,23 @@ function onInputData() {
         refs.list.innerHTML = '';
         refs.info.innerHTML = '';
         return;
-      }
-
-      if (countries.length > 1 && countries.length <= 10) {
+      } else if (countries.length > 1 && countries.length <= 10) {
         const countryList = countries.map(country =>
           createCountryList(country)
         );
         refs.list.innerHTML = countryList.join('');
         refs.info.innerHTML = '';
-      }
-
-      if (countries.length === 1) {
+      } else if (countries.length === 1) {
         const countryItem = countries.map(country =>
           createCountryCard(country)
         );
         refs.list.innerHTML = '';
         refs.info.innerHTML = countryItem.join('');
+      } else if (countries.length === 0) {
+        refs.list.innerHTML = '';
+        refs.info.innerHTML = '';
+      } else {
+        Notiflix.Notify.failure('Oops, there is no country with that name');
       }
     })
     .catch(error => {
