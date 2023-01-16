@@ -68,6 +68,8 @@ function onInputData() {
         refs.info.innerHTML = '';
       } else {
         Notiflix.Notify.failure('Oops, there is no country with that name');
+        refs.list.innerHTML = '';
+        refs.info.innerHTML = '';
       }
     })
     .catch(error => {
